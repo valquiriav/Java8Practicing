@@ -3,6 +3,7 @@ package br.com.letscode;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -18,5 +19,17 @@ public class Main {
                 .filter(c -> c.getAlunos() > 50)
                 .map(Curso::getAlunos)
                 .forEach(System.out::println);
+
+        cursos.stream()
+                .filter(c -> c.getAlunos() > 50)
+                .findFirst();
+
+        cursos.stream()
+                .mapToInt(c -> c.getAlunos())
+                .average();
+
+        List<Curso> cursosFiltrados = cursos.stream()
+                .filter(c -> c.getAlunos() > 50)
+                .collect(Collectors.toList());
     }
 }
