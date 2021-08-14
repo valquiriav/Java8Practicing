@@ -3,6 +3,7 @@ package br.com.letscode;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -14,7 +15,8 @@ public class Main {
         cursos.add(new Curso("C", 55));
 
         cursos.stream()
-        .filter(c -> c.getAlunos() > 50)
-        .forEach(c -> System.out.println(c.getNome()));
+                .filter(c -> c.getAlunos() > 50)
+                .map(Curso::getAlunos)
+                .forEach(System.out::println);
     }
 }
