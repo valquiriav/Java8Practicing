@@ -15,11 +15,16 @@ public class Main {
         fruits.add("pineapple");
         fruits.add("grape");
 
-        Comparator comparator = new br.com.letscode.Comparator();
-        fruits.sort(comparator);
 
-        MyConsumer consumer = new MyConsumer();
-        fruits.forEach(consumer);
+        fruits.sort((s1, s2) -> {
+            if (s1.length() > s2.length()){
+                return -1;
+            } else {
+                return 1;
+            }
+        });
+
+        fruits.forEach(s -> System.out.println(s));
 
     }
 }
