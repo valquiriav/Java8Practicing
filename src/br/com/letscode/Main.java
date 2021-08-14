@@ -15,14 +15,7 @@ public class Main {
         fruits.add("pineapple");
         fruits.add("grape");
 
-
-        fruits.sort((s1, s2) -> {
-            if (s1.length() > s2.length()){
-                return -1;
-            } else {
-                return 1;
-            }
-        });
+        fruits.sort(Comparator.comparing(s -> s.length()));
 
         fruits.forEach(s -> System.out.println(s));
 
