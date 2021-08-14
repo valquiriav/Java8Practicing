@@ -17,7 +17,7 @@ public class Main {
 
         fruits.sort(Comparator.comparing(String::length));
 
-        fruits.forEach(s -> System.out.println(s));
+        fruits.forEach(System.out::println);
 
     }
 }
